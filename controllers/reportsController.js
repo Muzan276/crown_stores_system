@@ -81,5 +81,32 @@ const getSummaryReport = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
+const getAdvancedDashboard = async (req, res) => {
+  try {
+    const todaySalesQuery = 'SELECT COUNT(*) as totalTransactions, SUM(unit_price * quantity) as totalRevenue, SUM((unit_price - cost_price) * quantity) as totalProfit FROM sales s JOIN products p ON s.product_id = p.product_id WHERE DATE(s.sale_date) = CURDATE()';
+    const [todaySales] = await db.query(todaySalesQuery);
 
-module.exports = { getDailySalesReport, getInventoryReport, getProcurementReport, getSummaryReport };
+    const topProductsQuery = 'SELECT p.product_name, SUM(s.quantity) as totalSold, SUM(s.unit_price * s.quantity) as totalRevenue FROM sales s JOIN products p ON s.product_id = p.product_id GROUP BY s.product_id, p.product_name ORDER BY totalSold DESC LIMIT 5';
+    const [topProducts] = await db.query(topProductsQuery);
+
+    const lowStockQuery = 'SELECT product_name, quantity_available, reorder_level FROM products WHERE quantity_available <= reorder_level ORDER BY quantity_available ASC';
+    const [lowStock] = await db.query(lowStockQuery);
+
+    const recentSalesQuery = 'SELECT s.sale_date, p.product_name, s.quantity, s.unit_price, s.amount_paid, u.full_name as agent_name FROM sales s JOIN products p ON s.product_id = p.product_id JOIN users u ON s.sales_agent_id = u.user_id ORDER BY s.sale_date DESC LIMIT 5';
+    const [recentSales] = await db.query(recentSalesQuery);
+
+    res.status(200).json({
+      today: {
+        totalTransactions: todaySales[0].totalTransactions || 0,
+        totalRevenue: todaySales[0].totalRevenue || 0,
+        totalProfit: todaySales[0].totalProfit || 0
+      },
+      topProducts,
+      lowStock,
+      recentSales
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+module.exports = { getDailySalesReport, getInventoryReport, getProcurementReport, getSummaryReport, getAdvancedDashboard };
