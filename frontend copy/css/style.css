@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9, #e0f2f1);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -21,9 +21,10 @@ body {
 
 .login-card {
   background: white;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(46, 204, 113, 0.15);
+  border-top: 4px solid #2ecc71;
 }
 
 .logo {
@@ -33,13 +34,14 @@ body {
 
 .logo h1 {
   font-size: 28px;
-  color: #1a1a2e;
+  color: #1b5e20;
   margin-bottom: 6px;
+  font-weight: 800;
 }
 
 .logo p {
   color: #666;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .form-group {
@@ -49,41 +51,46 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: #333;
-  font-weight: 600;
+  color: #2d6a4f;
+  font-weight: 700;
   font-size: 14px;
 }
 
 .form-group input {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid #e1e5e9;
-  border-radius: 8px;
+  border: 2px solid #e8f5e9;
+  border-radius: 10px;
   font-size: 15px;
-  transition: border-color 0.3s;
+  transition: all 0.3s;
   outline: none;
+  background: #f9fff9;
+  color: #1a1a1a;
 }
 
 .form-group input:focus {
-  border-color: #0f3460;
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
 }
 
 .btn-login {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #0f3460, #16213e);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: all 0.3s;
   margin-top: 8px;
 }
 
 .btn-login:hover {
-  opacity: 0.9;
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
 }
 
 .error-msg {

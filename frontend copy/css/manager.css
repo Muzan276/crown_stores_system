@@ -1,34 +1,24 @@
-.tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
+.tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
 
 .tab-btn {
   padding: 10px 20px;
-  background: #e1e5e9;
+  background: #e8f5e9;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  color: #555;
+  color: #2d6a4f;
   transition: all 0.3s;
 }
 
-.tab-btn.active {
-  background: #0f3460;
-  color: white;
-}
+.tab-btn.active { background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; }
 
-.tab-content {
-  display: none;
-}
+.tab-btn:hover { background: #c8e6c9; }
 
-.tab-content.active {
-  display: block;
-}
+.tab-content { display: none; }
+
+.tab-content.active { display: block; }
 
 .section-header {
   display: flex;
@@ -37,13 +27,10 @@
   margin-bottom: 16px;
 }
 
-.section-header h3 {
-  font-size: 18px;
-  color: #1a1a2e;
-}
+.section-header h3 { font-size: 18px; color: #1b5e20; font-weight: 700; }
 
 .btn-add {
-  background: #27ae60;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -51,39 +38,42 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
+  transition: all 0.3s;
 }
 
+.btn-add:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(46,204,113,0.3); }
+
 .form-card {
-  background: #f8f9fa;
+  background: #f9fff9;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 12px;
+  border: 1px solid #c8e6c9;
 }
 
 .form-card input, .form-card select {
   padding: 10px 14px;
-  border: 2px solid #e1e5e9;
+  border: 2px solid #c8e6c9;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
+  background: white;
 }
 
-.form-card input:focus, .form-card select:focus {
-  border-color: #0f3460;
-}
+.form-card input:focus, .form-card select:focus { border-color: #2ecc71; }
 
 .btn-save {
-  background: #0f3460;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .btn-cancel {
@@ -94,16 +84,4 @@
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
-}
-
-.success-msg {
-  color: #27ae60;
-  font-size: 14px;
-  margin: 8px 0;
-}
-
-.error-msg-inline {
-  color: #e74c3c;
-  font-size: 14px;
-  margin: 8px 0;
 }

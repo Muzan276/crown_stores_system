@@ -7,29 +7,23 @@
 
 .dash-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   margin-bottom: 24px;
+  border-top: 3px solid #2ecc71;
 }
 
-.dash-card h3 {
-  font-size: 16px;
-  color: #1a1a2e;
-  margin-bottom: 16px;
-  font-weight: 700;
-}
+.dash-card h3 { font-size: 16px; color: #1b5e20; margin-bottom: 16px; font-weight: 700; }
 
-.full-width {
-  grid-column: 1 / -1;
-}
+.full-width { grid-column: 1 / -1; }
 
 .btn-dark {
-  background: #2c3e50;
+  background: #1b5e20;
   color: white;
-  border: none;
+  border: 1px solid #2ecc71;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 13px;
   margin-right: 8px;
@@ -40,17 +34,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e8f5e9;
 }
 
-.top-product-item:last-child {
-  border-bottom: none;
-}
+.top-product-item:last-child { border-bottom: none; }
 
 .product-rank {
   width: 28px;
   height: 28px;
-  background: #0f3460;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -65,41 +57,23 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e8f5e9;
   color: #e74c3c;
 }
 
-.low-stock-item:last-child {
-  border-bottom: none;
-}
+.low-stock-item:last-child { border-bottom: none; }
 
-body.dark {
-  background: #1a1a2e;
-  color: #eee;
-}
+body.dark { background: #0a0a0a; color: #eee; }
 
 body.dark .dash-card,
-body.dark .stat-card,
-body.dark .navbar {
-  background: #16213e;
-  color: #eee;
-}
+body.dark .stat-card { background: #1a1a1a; color: #eee; border-color: #2d6a4f; }
 
-body.dark .dash-card h3,
-body.dark .stat-info p,
-body.dark .subtitle {
-  color: #ccc;
-}
+body.dark .navbar { background: linear-gradient(135deg, #0a0a0a, #1b4332); }
 
-body.dark table th {
-  background: #0f3460;
-}
+body.dark table th { background: #1b5e20; }
 
-body.dark table td {
-  border-bottom: 1px solid #2c3e50;
-  color: #eee;
-}
+body.dark table td { border-bottom: 1px solid #1b4332; color: #eee; }
 
-body.dark tr:hover {
-  background: #1a1a2e;
-}
+body.dark tr:hover { background: #111; }
+
+body.dark .dash-card h3 { color: #2ecc71; }

@@ -1,15 +1,17 @@
-.sale-card {
+.scan-card, .sale-card, .receipt-section {
   background: white;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 28px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   margin-bottom: 24px;
+  border-top: 3px solid #2ecc71;
 }
 
-.sale-card h3 {
+.scan-card h3, .sale-card h3, .receipt-section h3 {
   font-size: 18px;
-  color: #1a1a2e;
+  color: #1b5e20;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .sale-form {
@@ -22,108 +24,57 @@
 .form-group label {
   display: block;
   margin-bottom: 6px;
-  color: #333;
-  font-weight: 600;
+  color: #2d6a4f;
+  font-weight: 700;
   font-size: 13px;
 }
 
 .form-group input, .form-group select {
   width: 100%;
   padding: 10px 14px;
-  border: 2px solid #e1e5e9;
+  border: 2px solid #c8e6c9;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
 }
 
-.form-group input:focus, .form-group select:focus {
-  border-color: #0f3460;
-}
+.form-group input:focus, .form-group select:focus { border-color: #2ecc71; }
 
-.form-group input[readonly] {
-  background: #f8f9fa;
-  color: #666;
-}
+.form-group input[readonly] { background: #f9fff9; color: #666; }
 
 .change-display {
-  background: #d5f5e3;
+  background: #e8f5e9;
   border-radius: 8px;
   padding: 12px 20px;
   font-size: 18px;
   font-weight: 700;
-  color: #27ae60;
+  color: #1b5e20;
   margin-bottom: 16px;
+  border-left: 4px solid #2ecc71;
 }
 
-.sale-msg {
-  margin-bottom: 12px;
-  font-size: 14px;
-  min-height: 20px;
-}
+.sale-msg { margin-bottom: 12px; font-size: 14px; min-height: 20px; }
 
 .btn-sale {
-  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: white;
   border: none;
   padding: 14px 32px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   width: 100%;
-  transition: opacity 0.3s;
+  transition: all 0.3s;
 }
 
-.btn-sale:hover { opacity: 0.9; }
-
-.receipt-section {
-  background: white;
-  border-radius: 12px;
-  padding: 28px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
-
-.receipt-section h3 {
-  font-size: 18px;
-  color: #1a1a2e;
-  margin-bottom: 16px;
-}
-
-.receipt-content {
-  border: 2px dashed #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  font-family: monospace;
-  margin-bottom: 16px;
-  line-height: 1.8;
-}
-
-.btn-print {
-  background: #0f3460;
-  color: white;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-}
-.scan-card {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  margin-bottom: 24px;
-}
-
-.scan-card h3 {
-  font-size: 18px;
-  color: #1a1a2e;
-  margin-bottom: 16px;
+.btn-sale:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(46,204,113,0.3);
 }
 
 .btn-scan {
-  background: #0f3460;
+  background: #1b5e20;
   color: white;
   border: none;
   padding: 10px 24px;
@@ -145,19 +96,29 @@
   font-weight: 600;
 }
 
-.viewport {
-  width: 100%;
-  max-width: 400px;
-  margin: 16px 0;
-}
+.viewport { width: 100%; max-width: 400px; margin: 16px 0; }
 
-.viewport canvas, .viewport video {
-  width: 100%;
+.viewport canvas, .viewport video { width: 100%; border-radius: 8px; }
+
+.scan-result { color: #27ae60; font-weight: 600; margin-top: 8px; }
+
+.receipt-content {
+  border: 2px dashed #c8e6c9;
   border-radius: 8px;
+  padding: 20px;
+  font-family: monospace;
+  margin-bottom: 16px;
+  line-height: 1.8;
+  background: #f9fff9;
 }
 
-.scan-result {
-  color: #27ae60;
+.btn-print {
+  background: linear-gradient(135deg, #1b5e20, #2d6a4f);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
   font-weight: 600;
-  margin-top: 8px;
 }
